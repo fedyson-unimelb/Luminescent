@@ -1,79 +1,71 @@
-# Luminescent
-a) Battery Voltage (Telematics health data)
-Trend detection: Show how equipment (like traffic lights/signage) degrade over time (your chart already shows steady decline).
-Predictive maintenance: Build a simple ML regression model to predict when a battery will fall below safe threshold → replace/rotate before failure → extend equipment life.
-Story for COO: “Instead of replacing batteries every X months, we can predict exactly when each one will need service, cutting costs and extending lifespan.”
+# RPM Hire – AI-Driven Asset Optimisation by Luminescent
+# Sisi Dai | Lisha Yue | Franklin Edyson | Wenqi Zhang
 
-b) Quotes & Demand Forecasting
-Analyse quotes.csv for:
-Demand spikes (which day of week, which locations get most requests).
-Quote-to-conversion ratio (predict where assets will actually be deployed).
-Feed this into an AI model to forecast asset demand by region/project type.
-nearly half of the time the battery is already under stress, and 7% of the time it’s at risk of complete failure.
+##  Problem  
+- Equipment batteries degrade faster than expected → premature replacement → higher costs.  
+- Idle assets & lumpy demand → poor utilisation, ROI delayed (1–2 years per unit).  
+- Inefficient redeployment → excess km, driver hours, fuel cost, emissions.  
+- Limited visibility for staff → imprecise decision-making.  
 
-“We can predict that signage boards will be needed in outer Melbourne 2 weeks before tenders hit, and pre-position assets accordingly.”
+---
 
-Problem: Equipment batteries are degrading faster than expected → risk of premature replacement → higher costs.
-Solution with AI: Predict when each battery will fall below safe thresholds → schedule replacements only when needed → extend asset lifespan.
-Impact:
-Reduce unnecessary battery swaps.
-Improve uptime and reliability (better customer satisfaction).
-Lower waste: sustainability edge in government tenders.
-Depot activity:
-Almost all requests logged under VIC ELECTRONICS (2773 entries) → strong Melbourne base, great starting point for pilot.
-Most common asset types requested:
-Concrete Barrier Install – 786
-Transportation services – 709
-Insurance Charges – 186
-Consumables – 118
-Amber VMS (Variable Message Sign) – 112
-Hire rates (daily):
-Median daily hire ~ $27.50
-Typical upper range $50
-Outliers exist (up to $43k, likely bulk transport or bundled contracts).
-Demand trends (weekly):
-Quotes vary widely week to week (e.g. 137 in early Sept vs only 20 by late Sept).
-Indicates high seasonality & project-based demand → perfect scenario for AI-based prediction.
+## AI Solutions
+![Alt text](https://res.cloudinary.com/dxkdexo4w/image/upload/v1759204829/wenqi/luminon/AI_Analytics_and_Machine_Learning_nmxiwj.png)
+1. **Battery Health (Telematics)**  
+   - Detect degradation trends (voltage decline over time).  
+   - Predict failures before they occur → schedule replacements only when needed.  
 
-c) Transport Optimisation (Drivers + Assets)
-Use GPS coordinates + asset locations (once available) to run:
-Route clustering → assign jobs to drivers closest to assets.
-VRP (Vehicle Routing Problem) optimisation → minimise total km.
-Estimate CO₂ savings = reduced km × fuel efficiency.
-Story for COO: “10 drivers in Melbourne currently handle redeployments. With AI-driven clustering, we can cut redundant trips by 15–25%, saving thousands in fuel and reducing emissions.”
-3.  Implementation Roadmap (pitch-ready)
-Phase 1 – Proof of Concept (3 months)
-Clean existing GPS + asset data.
-Pilot predictive battery health model.
-Build a basic dashboard (asset health + redeployment recommendations).
-Phase 2 – Optimisation (6–12 months)
-Add AI demand forecasting for assets.
-Integrate with driver scheduling.
-Provide UI with map-based optimisation.
-Phase 3 – Scale (12–24 months)
-Roll out across national fleet (120 assets, multiple states).
-AI-assisted procurement & retirement decisions.
-Full sustainability reporting (CO₂ saved, utilisation %).
+2. **Quotes & Demand Forecasting**  
+   - Analyse quotes to predict demand spikes by location, time, and asset type.  
+   - Forecast demand 2+ weeks ahead to pre-position equipment in the right depots.  
 
-How?
-Financial: Prevent asset failures, cut fuel costs, extend asset ROI (currently takes ~1–2 yrs to pay off per unit).
-Sustainability: Strengthens tender applications (government loves SDG-linked vendors).
-Innovation: AI brand advantage (position as niche market leader in smart traffic equipment).
+3. **Transport Optimisation**  
+   - Use GPS + asset location data for route clustering.  
+   - Solve Vehicle Routing Problem (VRP) to minimise total km driven.  
+   - Estimate CO₂ savings via reduced km × fuel efficiency.  
 
+---
 
+## Key Takeaways from Data Analysis
+![Alt text](https://res.cloudinary.com/dxkdexo4w/image/upload/v1759204829/wenqi/luminon/output_aw9xwd.png)
+- **Battery telemetry**:  
+  - Avg. 11.43V (healthy ~12V).  
+  - 44% readings below warning (11.5V).  
+  - 7% readings in critical risk zone (<11.0V).  
 
+- **Quotes data**:  
+  - 2,700+ entries, mostly VIC ELECTRONICS depot.  
+  - Most requested: Concrete Barriers (786), Transportation (709), Amber VMS (112).  
+  - Median daily hire ~$27.50; outliers up to $43k.  
+  - Weekly demand is volatile → strong seasonality.  
 
-demand is lumpy and unpredictable → inefficient redeployment → idle assets + unnecessary transport.
-AI Opportunity:
-Forecast demand by asset type & region.
-Pre-position equipment at depots near predicted hotspots.
-Optimise driver routing to reduce km travelled.
-Impact:
-Better asset utilisation (assets pay off in 1–2 yrs → faster ROI).
-Cut fuel & driver costs (less empty runs).
-Support SDGs (9, 11, 12, 13) with sustainable logistics.
+- **Transport & Drivers**:  
+  - 10 Melbourne drivers handle redeployments.  
+  - AI-driven clustering could reduce redundant trips by **15–25%**, saving fuel & emissions.  
 
+---
 
+##  Implementation Roadmap  
+![Alt text](https://res.cloudinary.com/dxkdexo4w/image/upload/v1759204830/wenqi/luminon/Timeline_from_30_Sep_2025_to_30_Sep_2027_kabm5r.png)
+**Phase 1 – Proof of Concept (0–3 months)**  
+- Clean GPS + asset data.  
+- Pilot predictive battery model.  
+- Build basic dashboard (health + redeployment recs).  
 
+**Phase 2 – Optimisation (6–12 months)**  
+- Add demand forecasting model.  
+- Integrate AI into driver scheduling.  
+- Deliver UI with map-based optimisation.  
+- Organise staff training with innovative engagement such as gamification.
 
+**Phase 3 – Scale (12–24 months)**  
+- Roll out across full fleet (120+ assets, national).  
+- AI-assisted procurement & retirement decisions.  
+- Sustainability reporting (CO₂ saved, utilisation %).  
 
+---
+
+##  Impact  
+- **Financial**: Prevent asset failures, cut fuel & driver costs, extend ROI.  
+- **Sustainability**: Strengthens tender applications with measurable CO₂ savings.  
+- **Innovation**: Positions RPM Hire as a **market leader in AI-enabled traffic equipment**.  
